@@ -1,30 +1,28 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<div id="app" class="wrapper">
+<main-tab-bar></main-tab-bar>
+<main-sub-bar></main-sub-bar>
+<main-player></main-player>
+<router-view></router-view>
+<router-link to="/"></router-link>
+<my-footer></my-footer>
+</div>
 </template>
-
+<script>
+import MainPlayer from './components/content/MainPlayer.vue'
+import MainSubBar from './components/content/MainSubBar.vue'
+import MainTabBar from './components/content/MainTabBar.vue'
+import MyFooter from './components/footer/MyFooter.vue'
+export default {
+  name :'app',
+  components:{
+    MainTabBar,
+    MainSubBar,
+    MainPlayer,
+    MyFooter,
+  }
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  @import 'assets/css/base.css';
 </style>
